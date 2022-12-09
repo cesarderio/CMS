@@ -14,4 +14,4 @@ Team Agreement:
 
 * Pair programming will have us working side by side and will be able to talk through the concept and work.
 
-![UML](assets/uml.png)
+![UML](./assets/uml.png)
