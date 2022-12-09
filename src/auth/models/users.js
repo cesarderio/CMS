@@ -47,7 +47,7 @@ const userModel = (db, DataTypes) => {
     user.password = hashedPass;
   });
 
-  model.authBasic = async (username, password) => {
+  model.authBasic = async function (username, password)  {
     const user = await this.findOne({ where: { username }});
     const valid = await bcrypt.compare(password, user.password);
     if(valid) {
@@ -56,9 +56,12 @@ const userModel = (db, DataTypes) => {
     throw new Error('Invalid User');
   };
 
-  model.authToken = async (token) => {
+  model.authToken = async function (token)  {
+    console.log(token);
     const parsedToken = jwt.verify(token, SECRET);
+    console.log(parsedToken);
     const user = this.findOne({where: { username: parsedToken.username}});
+    console.log(user);
     if(user) {
       return user;
     }

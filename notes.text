@@ -1,0 +1,18 @@
+{
+  "user": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IktldmluIiwiaWF0IjoxNjcwNTU3MTkwfQ.OOC9xZ0A6ZtTsmvthcbMOQ9LSpIuMg-EYY49oE8BuPw",
+    "capabilities": [
+      "create",
+      "read",
+      "update",
+      "delete"
+    ],
+    "id": 7,
+    "username": "Kevin",
+    "password": "$2b$10$y7RICIWnbJsEeKyMCNTi2uWeIJNxdXR85hjRTW8Rx.r7kOpDNQ3AC",
+    "role": "Instructor",
+    "updatedAt": "2022-12-09T03:39:50.558Z",
+    "createdAt": "2022-12-09T03:39:50.558Z"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IktldmluIiwiaWF0IjoxNjcwNTU3MTkwfQ.OOC9xZ0A6ZtTsmvthcbMOQ9LSpIuMg-EYY49oE8BuPw"
+}

@@ -7,7 +7,7 @@ const cors = require('cors');
 const notFound = require('./middleware/handlers/404');
 const errorHandler = require('./middleware/handlers/500');
 
-// const Authrouter = require('./auth/router');
+const authRouter = require('./auth/authRouter');
 
 const router = require('./routes');
 
@@ -21,7 +21,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-// app.use(Authrouter);
+app.use(authRouter);
 app.use('/api',router);
 
 app.use('*', notFound);
