@@ -11,7 +11,7 @@ const bearerAuth = require('./middleware/bearer');
 
 authRouter.post('/signup', handleSignup);
 authRouter.post('/signin', basicAuth, handleSignin);
-authRouter.post('/users', bearerAuth, handleGetUsers);
+authRouter.get('/users', bearerAuth, handleGetUsers);
 
 async function handleSignup(req, res, next) {
   try {

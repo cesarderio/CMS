@@ -23,16 +23,18 @@ describe('Basic auth middleware', () => {
         authorization: 'Basic Password',
       },
     };
-    let res = {};
+    let res = {
+      status: jest.fn(),
+    };
     let next = jest.fn();
     await basicAuth(req, res, next);
-    expect(next).toHaveBeenCalledWith('Invalid Login');
+    expect(res.status).toHaveBeenCalledWith(403);
 
   });
   it('passes appropriately', async () => {
     let req = {
       headers: {
-        authorization: 'Basic dGVzdGVyOnBhc3M=',
+        authorization: 'Basic dGVzdFVzZXI6cGFzcw==',
       },
     };
     let res = {};
