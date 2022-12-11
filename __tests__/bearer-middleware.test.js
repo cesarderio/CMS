@@ -24,11 +24,13 @@ describe('Basic auth middleware', () => {
         authorization: `Bearer banana`,
       },
     };
-    let res = {};
+    let res = {
+      status: jest.fn(),
+    };
     let next = jest.fn();
 
     await bearerAuth(req, res, next);
-    expect(next).toHaveBeenCalledWith('Invalid Login');
+    expect(res.status).toHaveBeenCalledWith(403);
 
   });
   test('passes appropriately', async () => {
@@ -41,6 +43,6 @@ describe('Basic auth middleware', () => {
     let next = jest.fn();
 
     await bearerAuth(req, res, next);
-    expect(next).toHaveBeenCalledWith('Welcome!');
+    expect(next).toHaveBeenCalled();
   });
 });

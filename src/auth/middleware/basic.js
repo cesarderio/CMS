@@ -2,7 +2,6 @@
 
 const base64 = require('base-64');
 
-// const userModel = require('../models/users');
 const { users } = require('../../models');
 
 module.exports = async (req, res, next) => {
@@ -16,6 +15,7 @@ module.exports = async (req, res, next) => {
     req.user = await users.authBasic(user, pass);
     next();
   } catch (e) {
-    res.status(403).send('Invalid Login');
+    res.status(403);
+    // res.status(403).send('Invalid Login');
   }
 };
